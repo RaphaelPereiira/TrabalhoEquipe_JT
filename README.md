@@ -2,4 +2,5 @@
 Raphael Pereira ==
 Artur Carvalho ==
 Artur Felipe ==
-Sandro Henrique
+Sandro Henrique ==
+Luiz Felipe
