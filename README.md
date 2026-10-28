@@ -1,1 +1,1 @@
-# Trabalho_JT
+# TrabalhoEquipe_JT
