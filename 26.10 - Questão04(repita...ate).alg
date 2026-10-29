@@ -18,10 +18,16 @@ leia (potênciadomotor)
 escreval ("Qual a cor do carro?: ")
 leia (cor)
 
-se (caixa>=carro) entao
-escreval ("Você tem dinheiro suficiente para comprar o carro, pois o valor do carro é R$ " + carro + "!")
+se (caixa >= 40000) entao
+escreval ("O valor do caixa  é suficiente para comprar o carro, pois o valor do carro é R$ " + carro + "!")
 senao
-escreval ("Você não tem dinheiro suficiente para comprar o carro, pois o valor do carro é R$ " + carro + "!")
+escreval ("O valor do caixa não é suficiente para comprar o carro, pois o valor do carro é R$ " + carro + "!")
+fimse
+
+se ((fabricante = "ford" ou fabricante = "Ford") e (potênciadomotor = 1.8) e (cor = "azul" ou cor = "Azul")) entao
+escreval ("Você atendeu todos os requisitos da compra!")
+senao
+escreval ("Você não atendeu todos os requisitos da compra!")
 fimse
 
 se (((caixa >= 40000) e (fabricante = "ford" ou fabricante = "Ford") e (potênciadomotor = 1.8) e (cor = "azul" ou cor = "Azul"))) entao
