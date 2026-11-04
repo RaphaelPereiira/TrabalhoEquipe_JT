@@ -1,23 +1,23 @@
 const prompt = require('prompt-sync')();
+const hoje = new Date();
 //Controlar empréstimos de livros.
 
-let empréstimos;
-let nomedoaluno;
-let nomedolivro;
-let datadoempréstimo;
+let listadeemprestimos = [];
+let nomedocliente;
 
-console.log("Empréstimo disponíveis: ");
-console.log("50 tons de cinza, O pequeno príncipe, O bosque selvagem");
-empréstimos = prompt("Digite o empréstimo que deseja: ");
-nomedoaluno = prompt("Digite o nome do aluno: ");
-datadoempréstimo = prompt("Digite a data do empréstimo: ");
-nomedolivro = prompt("Digite o nome do livro: ");
+//Adquirir informações do usuário: 
+for (rep = 0; rep <2; rep++){
+listadeemprestimos[rep] = prompt("Digite o ${rep + 1}º item que deseja: ");
+nomedocliente = prompt("Qual seu o nome? ");
 
-
-if (empréstimos === "50 tons de cinza" || empréstimos === "O pequeno príncipe" || empréstimos === "O bosque selvagem") {
-    console.log(empréstimos);
-    console.log(nomedoaluno);
-    console.log(datadoempréstimo);
-    console.log(nomedolivro);
-    console.log("Você realizou o empréstimo do livro " + nomedolivro + " para o aluno " + nomedoaluno + " na data " + datadoempréstimo + "!");
+console.log("Empréstimo do livro " + listadeemprestimos[rep] + " para " + nomedocliente + ", na data " + hoje.toLocaleDateString() + ", foi realizado com sucesso!")
 }
+
+//Exibição dos resultados:
+console.log("\n--- Sua lista de empréstimos ---");
+for (let rep = 0; rep < listadeemprestimos.length; rep++) {
+  console.log(`${rep + 1}. ${listadeemprestimos[rep]}`);
+}
+
+console.log(`\nTotal de itens na lista: ${listadeemprestimos.length}`);
+
