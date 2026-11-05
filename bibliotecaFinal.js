@@ -149,7 +149,3 @@ do {
 
   // Repete o menu enquanto a opção for diferente de '4'.
 } while (opcao !== '4');
-
-// Os dados ficam na memória e são perdidos ao encerrar.
-// Esta versão não valida campos vazios nem a existência da data.
-// Na pergunta de continuação, digite exatamente s ou n em minúsculas.
