@@ -19,7 +19,7 @@ function cadastrarEmprestimo() {
   do {
     // console.log exibe mensagens.
     // \n insere uma quebra de linha.
-    console.log('\n--- Cadastro de empréstimo ---');
+    console.log('\n Cadastro de empréstimo ');
 
     // prompt recebe texto.
     // push adiciona cada resposta ao final do vetor.
@@ -57,7 +57,7 @@ function listarEmprestimos(lista) {
     return;
   }
 
-  console.log('\n--- Lista de empréstimos ---');
+  console.log('\n Lista de empréstimos ');
 
   // i começa em zero, pois os índices do vetor começam em zero.
   // O laço continua enquanto i for menor que lista.length.
@@ -92,7 +92,7 @@ function buscarEmprestimo() {
     // === compara valor e tipo.
     // O nome pesquisado precisa ser exatamente igual ao cadastrado.
     if (nome === cadastro[i]) {
-      console.log('\n--- Empréstimo encontrado ---');
+      console.log('\n Empréstimo encontrado ');
       console.log('Aluno: ' + cadastro[i]);
       console.log('Livro: ' + cadastro[i + 1]);
       console.log('Data: ' + cadastro[i + 2]);
@@ -115,7 +115,7 @@ let opcao;
 
 // O menu aparece pelo menos uma vez e se repete até a opção '4'.
 do {
-  console.log('\n=== BIBLIOTECA SABER EM AÇÃO ===');
+  console.log('\n           MENU ');
   console.log('1 - Cadastrar empréstimo');
   console.log('2 - Listar empréstimos');
   console.log('3 - Buscar empréstimo pelo aluno');
@@ -149,3 +149,7 @@ do {
 
   // Repete o menu enquanto a opção for diferente de '4'.
 } while (opcao !== '4');
+
+// Os dados ficam na memória e são perdidos ao encerrar.
+// Esta versão não valida campos vazios nem a existência da data.
+// Na pergunta de continuação, digite exatamente s ou n em minúsculas.
