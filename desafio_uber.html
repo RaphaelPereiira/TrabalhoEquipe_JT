@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio POO + DOM - Squad [Número]</title>
+</head>
+<body>
+
+  <h1>📱 Aplicativo: UBERTECH </h1>
+  <hr>
+
+  <!-- 1. PAINEL DE EXIBIÇÃO (DOM + GET) -->
+  <h2>Painel de Informações</h2>
+  <p>Passageiro: <strong id="info-passageiro"></strong></p>
+  <p>Statuts da Corrida: <strong id="info-status"></strong></p>
+  <p>Valor Estimado: <strong id="info-valor"></strong></p>
+
+  <hr>
+
+  <!-- 2. CONTROLES E FORMULÁRIOS (DOM + SET) -->
+  <h3>Ações do Aplicativo</h3>
+  
+  <br><br>
+
+  <label for="campo-valor">Novo Valor da corrida:</label>
+  <input type="number" id="campo-valor" step="0.01">
+  <button onclick="recalcularTarifa()">Recalcular Corrida</button>
+
+  <hr>
+  <button onclick="iniciarCorrida()">Iniciar Corrida</button>
+  <button onclick="testarValidacao()">Desafio: tentar R$3,00</button>
+  <hr>
+  <!-- 3. CONSOLE VISUAL -->
+  <h3>Console de Operações:</h3>
+  <div id="console-output"></div>
+
+  <script>
+
+class Corrida {
+  #valorEstimado;
+
+  constructor(passageiro, valorEstimado) {
+    this.passageiro = passageiro;
+    this.valorEstimado = valorEstimado; // Usa o setter
+    this.status = "Aguardando";
+}
+
+
+  // TODO: Escreva o GET para valorEstimado
+  get valorEstimado() {
+    return this.#valorEstimado;
+  }
+
+  // TODO: Escreva o SET para valorEstimado com a validação
+  set valorEstimado(novoValor) {
+    if (novoValor >= 6) {
+      this.#valorEstimado = novoValor;
+    } else {
+      this.#valorEstimado = 6;
+      exibirNoConsole("Aplicada a taxa mínima de R$ 6.00");
+      alert("Valor abaixo do mínimo permitido! Valor reajustado para R$6,00")
+    }
+  }
+}
+
+//OBJETO
+
+function exibirNoConsole(mensagem) {
+      document.getElementById("console-output").innerHTML += `<p>> ${mensagem}</p>`;}
+
+  function atualizarTela() {
+      document.getElementById("info-passageiro").textContent = corrida01.passageiro;
+      document.getElementById("info-status").textContent = corrida01.status;
+      document.getElementById("info-valor").textContent = `R$ ${corrida01.valorEstimado.toFixed(2)}`  
+    }
+
+  function recalcularTarifa(){
+const valorDigitado = Number(document.getElementById("campo-valor").value);
+corrida01.valorEstimado = valorDigitado
+exibirNoConsole(`Tarifa Recalculada: R$ ${corrida01.valorEstiamdo.toFixed(2)}`);
+atualizarTela();
+
+
+  }
+
+  function iniciarCorrida(){
+corrida01.status = "Em Andamento";
+exibirNoConsole("Corrida Iniciada!");
+atualizarTela();
+
+
+
+  }
+
+  function testarValidacao(){
+corrida01.valorEstimado =  3.00;
+atualizarTela();
+
+
+  }
+
+
+
+
+const corrida01 = new Corrida ("Artur", 15);
+
+atualizarTela();
+
+
+
+
+    // PASSO A: Cole aqui a Classe em JS criada nas aulas anteriores
+    // PASSO B: Instancie o objeto do seu Squad
+    // PASSO C: Crie as funções manipularDOM() para ler os <input> e atualizar o <strong id="...">
+  </script>
+</body>
+</html>
